@@ -5,6 +5,9 @@
 }
 .container .back {
     text-align: left;
+    color: blue;
+    cursor: pointer;
+    margin-bottom: 4px;
 }
 .container .post{
     clear: left;

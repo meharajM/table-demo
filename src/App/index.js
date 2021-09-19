@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo } from 'react';
-import logo from '../logo.svg';
 import './App.css';
 import Table from '../Table'
 import {getData} from '../api'
