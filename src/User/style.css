@@ -1,0 +1,20 @@
+.user div{
+    display: inline-block;
+    margin-top: 8px;
+}
+.user .user-name{
+    color:rgb(51, 224, 167);
+    float: left;
+}
+.user .website{
+    text-align: right;
+    float: right;
+}
+.user .user-name .user-image {
+    height: 20px;
+    width: 20px;
+    background-image: url(./user.png);
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+}
+

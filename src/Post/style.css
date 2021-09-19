@@ -1,0 +1,19 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 16px;
+}
+.container .back {
+    text-align: left;
+}
+.container .post{
+    clear: left;
+}
+.container .post .title{
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+.container .post .body {
+    text-align: left;
+}

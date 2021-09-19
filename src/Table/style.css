@@ -1,0 +1,28 @@
+.table-container{
+    max-width: 600px;
+    margin: auto;
+    margin-top: 16px;
+}
+.table-container .table tr{
+    height: 24px;
+}
+.table-container .table .table-body tr:hover{
+    background-color: rgb(190, 224, 238);
+}
+
+.table-container .table .table-head tr th{
+    min-width: 60px;
+    background-color: rgb(172, 202, 209);
+    position: relative;
+} 
+.table-container .table .table-body tr .title{
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    cursor: pointer;
+}
+
+.table-container .table .table-body tr td div {
+    max-height:  24px;
+    overflow: hidden;
+}
