@@ -1,2 +1,4 @@
-Hosted app
-https://meharajm.github.io/table-demo/
+Steps to run: 
+git pull
+npm install
+npm start
