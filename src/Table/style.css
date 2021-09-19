@@ -2,6 +2,8 @@
     max-width: 600px;
     margin: auto;
     margin-top: 16px;
+    height: 100vh;
+    overflow: scroll;
 }
 .table-container .table tr{
     height: 24px;
@@ -21,7 +23,3 @@
     overflow-wrap: break-word;
     cursor: pointer;
 }
-
-/* .table-container .table .table-body tr td div {
-    max-height:  24px;
-} */

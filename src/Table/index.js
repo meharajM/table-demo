@@ -1,22 +1,27 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './style.css'
-// import useWindowDimensions from '../utils/viewPort';
+import useWindowDimensions, {useViewPort} from '../utils/viewPort';
 function getRowProps(rowProps, row) {
     return {
         onClick: (ev) => rowProps.onClickHandler(row)
     }
 }
 function Table({data, columns, rowProps}) {
-    // const { height, width } = useWindowDimensions();
-    return <div className="table-container"><table className="table">
+    const { height, width } = useWindowDimensions();
+    const tableContainer = useRef(null);
+    const rowHeight = 24;
+    let viewPortRows = Math.ceil(height/rowHeight)
+    const {renderData,numberOfRows } = useViewPort({viewPortRows, data}, tableContainer);
+    console.log("inside table", numberOfRows)
+    return <div className="table-container" ref={tableContainer}><table className="table">
     <thead className="table-head">
         <tr>
             {columns.map((col, index) => <th key={`th-${index}`}><div>{col.label}</div></th>)}
         </tr>
     </thead>
     <tbody className="table-body">
-        {data.map(d => {
-            return <tr {...getRowProps(rowProps, d)} key={d.id}>{columns.map(({accesor, className}, index) => {
+        {renderData.map(d => {
+            return <tr {...getRowProps(rowProps, d)}>{columns.map(({accesor, className}, index) => {
                 const cellValue = accesor && typeof accesor === 'string' ? d[accesor] : accesor(d);
                 const cellProps = {};
                 if(className) {
@@ -26,7 +31,6 @@ function Table({data, columns, rowProps}) {
             })}</tr>
         })}
     </tbody>
-</table></div>
-    
+</table></div>    
 }
-export default Table;
+export default React.memo(Table);
